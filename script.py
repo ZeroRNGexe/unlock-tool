@@ -155,6 +155,7 @@ def check_status(session, token, device_id):
         if data.get("code") == 100004: print(f'{R}Token expired!'); sys.exit(1)
         info = data.get("data", {})
         is_pass, button = info.get("is_pass"), info.get("button_state")
+        print(f"[DEBUG] API code={data.get('code')}, "f"is_pass={is_pass}, button_state={button}")
         print(f'{G}[Status]: ', end='')
         if is_pass == 4 and button == 1: print(f'{GB}READY!'); return True
         elif is_pass == 1: print(f'{GB}Already approved!'); sys.exit(0)
