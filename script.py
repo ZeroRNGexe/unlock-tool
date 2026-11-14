@@ -253,6 +253,7 @@ def check_status(session, token, device_id):
     code = data.get("code")
     is_pass = info.get("is_pass")
     button = info.get("button_state")
+    print(data)
 
     # Do NOT print the token, request cookie, or raw response.
     debug(f"API code: {code!r}")
